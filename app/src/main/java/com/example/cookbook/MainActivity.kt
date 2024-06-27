@@ -1,6 +1,9 @@
 package com.example.cookbook
 
+import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -17,6 +20,13 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-
+        //Handler is used to perform a task while holding the screen. Looper runs the handler repeatedly.
+        //here we are holding the screen for 2 seconds for gif splashscreen
+        Handler(Looper.getMainLooper()).postDelayed(
+            {
+                startActivity(Intent(this,HomeActivity::class.java))
+                finish()
+            },2000
+        )
     }
 }
