@@ -2,8 +2,9 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.CookBook" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-         <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimary">@color/purple_500</item>
     </style>
 
-    <style name="Theme.CookBook" parent="Base.Theme.CookBook" />
+    <style name="Theme.CookBook" parent="Base.Theme.CookBook"/>
+
 </resources>

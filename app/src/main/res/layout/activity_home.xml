@@ -37,7 +37,6 @@
         android:layout_marginTop="24dp"
         android:fontFamily="@font/poppins"
         android:text="Hello"
-        android:textColor="@color/black"
         android:textSize="28sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
@@ -62,7 +61,7 @@
         android:layout_marginTop="8dp"
         android:fontFamily="@font/poppins_light"
         android:text="Which Indian food you like to cook today?"
-        android:textColor="#424242"
+
         android:textSize="17sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
@@ -142,8 +141,7 @@
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/poppins_light"
                 android:gravity="center"
-                android:text="Salad"
-                android:textColor="@color/black" />
+                android:text="Salad" />
 
             <ImageView
                 android:id="@+id/MainDish"
@@ -163,8 +161,7 @@
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/poppins_light"
                 android:gravity="center"
-                android:text="Main"
-                android:textColor="@color/black" />
+                android:text="Main" />
 
             <ImageView
                 android:id="@+id/Drinks"
@@ -184,8 +181,7 @@
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/poppins_light"
                 android:gravity="center"
-                android:text="Drinks"
-                android:textColor="@color/black" />
+                android:text="Drinks"/>
 
             <ImageView
                 android:id="@+id/Desserts"
@@ -205,8 +201,7 @@
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/poppins_light"
                 android:gravity="center"
-                android:text="Desserts"
-                android:textColor="@color/black" />
+                android:text="Desserts" />
 
         </RelativeLayout>
     </HorizontalScrollView>
@@ -230,6 +225,7 @@
         android:layout_marginStart="1dp"
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Popular" />
+        app:layout_constraintTop_toBottomOf="@+id/Popular"
+        tools:listitem="@layout/popular_rv_item"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
