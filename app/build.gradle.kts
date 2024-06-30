@@ -1,11 +1,15 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("kotlin-kapt")
 }
 
 android {
     namespace = "com.example.cookbook"
     compileSdk = 34
+    buildFeatures {
+        viewBinding = true
+    }
 
     defaultConfig {
         applicationId = "com.example.cookbook"
@@ -46,5 +50,16 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    implementation ("pl.droidsonroids.gif:android-gif-drawable:1.2.28")
+    implementation("pl.droidsonroids.gif:android-gif-drawable:1.2.28")
+
+    //room dependencies
+    var room_version = "2.6.1"
+    implementation("androidx.room:room-runtime:$room_version")
+    annotationProcessor("androidx.room:room-compiler:$room_version")
+    // To use Kotlin annotation processing tool (kapt)
+    kapt("androidx.room:room-compiler:$room_version")
+
+    //glide for images, we can also use piccasso
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
+
 }
