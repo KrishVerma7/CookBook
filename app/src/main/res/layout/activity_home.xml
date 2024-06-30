@@ -67,7 +67,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/search"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_marginStart="24dp"
@@ -107,7 +107,7 @@
         android:text="Categories"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+        app:layout_constraintTop_toBottomOf="@+id/search" />
 
     <HorizontalScrollView
         android:id="@+id/horizontalScrollView"
@@ -208,7 +208,7 @@
 
     <TextView
         android:id="@+id/Popular"
-        android:layout_width="270dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
@@ -220,9 +220,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_popular"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Popular"
