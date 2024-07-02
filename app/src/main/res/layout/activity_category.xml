@@ -9,7 +9,7 @@
     tools:context=".CategoryActivity">
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/go_back_home"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="24dp"
@@ -30,14 +30,15 @@
         android:text="Salad"
         android:textColor="@color/black"
         android:textSize="22sp"
-        app:layout_constraintBottom_toBottomOf="@id/imageView4"
+        app:layout_constraintBottom_toBottomOf="@+id/go_back_home"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.098"
-        app:layout_constraintStart_toEndOf="@+id/imageView4"
-        app:layout_constraintTop_toTopOf="@id/imageView4"
+        app:layout_constraintStart_toEndOf="@+id/go_back_home"
+        app:layout_constraintTop_toTopOf="@+id/go_back_home"
         app:layout_constraintVertical_bias="0.6" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_category"
         android:layout_width="409dp"
         android:layout_height="794dp"
         android:layout_marginTop="8dp"

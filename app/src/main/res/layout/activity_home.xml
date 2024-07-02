@@ -144,7 +144,7 @@
                 android:text="Salad" />
 
             <ImageView
-                android:id="@+id/MainDish"
+                android:id="@+id/mainDish"
                 style="@style/my_style"
                 android:layout_marginStart="17dp"
                 android:layout_toEndOf="@id/salad"
@@ -155,19 +155,19 @@
                 android:id="@+id/textView6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/MainDish"
-                android:layout_alignStart="@id/MainDish"
-                android:layout_alignEnd="@id/MainDish"
+                android:layout_below="@id/mainDish"
+                android:layout_alignStart="@id/mainDish"
+                android:layout_alignEnd="@id/mainDish"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/poppins_light"
                 android:gravity="center"
                 android:text="Main" />
 
             <ImageView
-                android:id="@+id/Drinks"
+                android:id="@+id/drinks"
                 style="@style/my_style"
                 android:layout_marginStart="17dp"
-                android:layout_toEndOf="@id/MainDish"
+                android:layout_toEndOf="@id/mainDish"
                 android:background="@drawable/category_card_bc"
                 app:srcCompat="@drawable/catergory_drinks" />
 
@@ -175,19 +175,19 @@
                 android:id="@+id/textView7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/Drinks"
-                android:layout_alignStart="@id/Drinks"
-                android:layout_alignEnd="@id/Drinks"
+                android:layout_below="@id/drinks"
+                android:layout_alignStart="@id/drinks"
+                android:layout_alignEnd="@id/drinks"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/poppins_light"
                 android:gravity="center"
                 android:text="Drinks"/>
 
             <ImageView
-                android:id="@+id/Desserts"
+                android:id="@+id/desserts"
                 style="@style/my_style"
                 android:layout_marginStart="17dp"
-                android:layout_toEndOf="@id/Drinks"
+                android:layout_toEndOf="@id/drinks"
                 android:background="@drawable/category_card_bc"
                 app:srcCompat="@drawable/category_dessert" />
 
@@ -195,9 +195,9 @@
                 android:id="@+id/textView8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/Desserts"
-                android:layout_alignStart="@id/Desserts"
-                android:layout_alignEnd="@id/Desserts"
+                android:layout_below="@id/desserts"
+                android:layout_alignStart="@id/desserts"
+                android:layout_alignEnd="@id/desserts"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/poppins_light"
                 android:gravity="center"
