@@ -31,8 +31,4 @@ class SearchAdapter(var dataList: ArrayList<Recipe>, var context: Context) :
         dataList=filterList
         notifyDataSetChanged()
     }
-
-
-
-
 }

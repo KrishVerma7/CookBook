@@ -1,5 +1,7 @@
 package com.example.cookbook
 
+import android.annotation.SuppressLint
+import android.inputmethodservice.InputMethodService
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -18,6 +20,7 @@ class SearchActivity : AppCompatActivity() {
     private lateinit var dataList: ArrayList<Recipe>
     private lateinit var recipes: List<Recipe>
 
+    @SuppressLint("ServiceCast")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -29,7 +32,7 @@ class SearchActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
+        //this will focus on search bar when activity is opened
         binding.search.requestFocus()
 
         var db = databaseBuilder(this@SearchActivity, AppDatabase::class.java, "db_name")
@@ -41,9 +44,12 @@ class SearchActivity : AppCompatActivity() {
 
         recipes = daoObject.getAll() as List<Recipe>
         setUpRecyclerView()
+
+        //back button implementation
         binding.goBackHome.setOnClickListener {
             onBackPressed()
         }
+
         //this is a text watcher which constantly sees for changes in search bar
         binding.search.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
@@ -53,20 +59,24 @@ class SearchActivity : AppCompatActivity() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 if (s.toString() != "") {
                     filterData(s.toString())
+                }else{
+                    setUpRecyclerView()
                 }
             }
 
             override fun afterTextChanged(s: Editable?) {
 
             }
-
         })
+
+
     }
 
     //filter data from search bar text and show related recipes
     private fun filterData(filterText: String) {
-        var filterData = ArrayList<Recipe>()
+        var filterData = ArrayList<Recipe>()  //add into a arraylist of items to show all the items related to search(e.g "P" will show pizza , pineapple etc.)
         for (i in recipes.indices) {
+            //compare our recipes.db tittles with our entered text
             if (recipes[i]!!.tittle.lowercase().contains(filterText.lowercase())) {
                 filterData.add(recipes[i]!!)
             }
@@ -74,6 +84,7 @@ class SearchActivity : AppCompatActivity() {
         }
     }
 
+    //show popular recipes when search bar is empty
     private fun setUpRecyclerView() {
         dataList = ArrayList()
         binding.rvSearch.layoutManager =
