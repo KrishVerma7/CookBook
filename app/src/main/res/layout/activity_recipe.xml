@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RecipeActivity">
+    tools:context=".RecipeActivity"
+    app:layoutDescription="@xml/activity_recipe_scene">
 
     <ImageView
         android:id="@+id/item_img"
@@ -61,12 +62,12 @@
         android:id="@+id/relativeLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="-10dp"
+        android:layout_marginTop="240dp"
         android:background="@drawable/card_recipe"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/item_img">
+        app:layout_constraintTop_toTopOf="@+id/item_img">
 
         <TextView
             android:id="@+id/tittle"
@@ -116,29 +117,30 @@
             android:text="Ingredients" />
 
         <ScrollView
+            android:id="@+id/ing_scrollview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/ing"
             android:layout_alignParentStart="true"
-            android:padding="10dp"
-            android:layout_below="@id/ing">
+            android:padding="10dp">
 
             <TextView
                 android:id="@+id/ing_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:lineSpacingExtra="10dp"
-                android:text=""
-                android:textSize="15sp"
 
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:text=""
+                android:textSize="15sp" />
         </ScrollView>
-        
+
         <Button
             android:id="@+id/steps"
             android:layout_width="150dp"
             android:layout_height="42dp"
-            android:layout_alignParentEnd="true"
             android:layout_below="@id/tittle"
+            android:layout_alignParentEnd="true"
             android:layout_marginTop="40dp"
             android:layout_marginEnd="34dp"
             android:background="@drawable/btn_ing"
@@ -147,27 +149,28 @@
             android:text="Steps" />
 
         <ScrollView
+            android:id="@+id/step_scrollview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/steps"
             android:layout_alignParentStart="true"
             android:padding="10dp"
-            android:visibility="gone"
-            android:layout_below="@id/steps">
+            android:visibility="gone">
 
             <TextView
                 android:id="@+id/step_data"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:lineSpacingExtra="10dp"
-                android:text=""
-                android:textSize="15sp"
 
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:text=""
+                android:textSize="15sp" />
         </ScrollView>
     </RelativeLayout>
 
     <ImageView
-        android:id="@+id/imageView10"
+        android:id="@+id/go_up"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginTop="24dp"
@@ -175,4 +178,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/relativeLayout"
         app:srcCompat="@drawable/scroll_up" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.motion.widget.MotionLayout>

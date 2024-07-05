@@ -29,6 +29,7 @@ class PopularAdapter(var dataList: ArrayList<Recipe>, var context: Context) :
         //our time is written with ingredients in database file thus we need to extract it out
         var time = dataList.get(position).ing.split("\n".toRegex()).dropLastWhile { it.isEmpty() }
             .toTypedArray()
+
         holder.binding.popularTime.text = time.get(0)
         holder.itemView.setOnClickListener{
             var intent = Intent(context,RecipeActivity::class.java)

@@ -1,7 +1,14 @@
 package com.example.cookbook
 
+import android.app.Dialog
+import android.content.DialogInterface
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.view.Gravity
+import android.view.ViewGroup
+import android.view.Window
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -29,27 +36,41 @@ class HomeActivity : AppCompatActivity() {
 
         binding.salad.setOnClickListener {
             val myIntent = Intent(this@HomeActivity, CategoryActivity::class.java)
-            myIntent.putExtra("TITTLE","Salad")
-            myIntent.putExtra("CATEGORY","Salad")
+            myIntent.putExtra("TITTLE", "Salad")
+            myIntent.putExtra("CATEGORY", "Salad")
             startActivity(myIntent)
         }
         binding.mainDish.setOnClickListener {
             val myIntent = Intent(this@HomeActivity, CategoryActivity::class.java)
-            myIntent.putExtra("TITTLE","Main Dish")
-            myIntent.putExtra("CATEGORY","Dish")
+            myIntent.putExtra("TITTLE", "Main Dish")
+            myIntent.putExtra("CATEGORY", "Dish")
             startActivity(myIntent)
         }
         binding.drinks.setOnClickListener {
             val myIntent = Intent(this@HomeActivity, CategoryActivity::class.java)
-            myIntent.putExtra("TITTLE","Drinks")
-            myIntent.putExtra("CATEGORY","Drinks")
+            myIntent.putExtra("TITTLE", "Drinks")
+            myIntent.putExtra("CATEGORY", "Drinks")
             startActivity(myIntent)
         }
         binding.desserts.setOnClickListener {
             val myIntent = Intent(this@HomeActivity, CategoryActivity::class.java)
-            myIntent.putExtra("TITTLE","Desserts")
-            myIntent.putExtra("CATEGORY","Desserts")
+            myIntent.putExtra("TITTLE", "Desserts")
+            myIntent.putExtra("CATEGORY", "Desserts")
             startActivity(myIntent)
+        }
+
+        //implementing bottom sheet (more button on top left)
+        binding.more.setOnClickListener {
+            var dialog = Dialog(this)
+            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+            dialog.setContentView(R.layout.bottom_sheet)
+            dialog.show()
+            dialog.window?.setLayout(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT
+            )
+            dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            dialog.window?.setGravity(Gravity.BOTTOM)
         }
 
         setUpRecyclerView()
